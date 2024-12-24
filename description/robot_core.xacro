@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+   <material name="white">
+        <color rgba="1 1 1 1"/>
+   </material>
+
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1"/>
+   </material>
+
+   <material name="blue">
+    <color rgba="0.2 0.2 1 1"/>
+   </material>
+
+   <material name="black">
+        <color rgba="0 0 0 1"/>
+   </material>
+
+   <link name="base_link">
+   
+   </link>
+
+    <joint name="chasis_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chasis"/>
+    <origin xyz="-0.1 0 0"/>
+    </joint>
+
+    <link name="chasis">
+        <visual>
+        <origin xyz="0.0075 0 0.0315"/>
+            <geometry>
+                <box size="0.015 0.023 0.063"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+</robot>
