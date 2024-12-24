@@ -27,6 +27,7 @@
 
 
     <gazebo reference="laser_frame">
+        
         <material>Gazebo/Red</material>
 
         <sensor name="laser" type="ray">
