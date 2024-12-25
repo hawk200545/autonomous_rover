@@ -28,6 +28,17 @@
    
    </link>
 
+   <!--Base FootPrint Link-->
+
+   <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+   </joint>
+
+   <link name="base_footprint">
+   </link>
+
    <!---Chasis-LInk-->
 
     <joint name="chasis_joint" type="fixed">
@@ -151,4 +162,33 @@
         <mu1 value="0.001"/>
         <mu2 value="0.001"/>
     </gazebo>
+
+    <!-- IMU Sensor -->
+    <joint name="base_to_imu" type="fixed">
+        <parent link="base_link"/>
+        <child link="imu"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </joint>
+
+    <link name="imu">
+        <visual>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+            </geometry>
+            <material name="red"/>
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+
 </robot>

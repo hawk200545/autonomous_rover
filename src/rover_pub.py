@@ -1,3 +1,4 @@
+#/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -12,7 +13,7 @@ class ArduinoBridgeNode(Node):
         super().__init__('arduino_bridge_node')
 
         # Initialize serial communication
-        self.serial_port = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+        self.serial_port = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
 
         # ROS publishers
         self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
