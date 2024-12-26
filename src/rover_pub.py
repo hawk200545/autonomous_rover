@@ -67,7 +67,7 @@ class ArduinoBridgeNode(Node):
         self.last_time = time.time()
 
         linear_velocity = (left_speed + right_speed) / 2
-        angular_velocity = (right_speed - left_speed) / 0.3  # Adjust wheelbase
+        angular_velocity = (right_speed - left_speed) / self.wheel_base # Adjust wheelbase
 
         delta_theta = angular_velocity * dt
         self.theta += delta_theta
