@@ -18,9 +18,11 @@ endif()
 # Install Python scripts
 install(
   PROGRAMS
-    scripts/rover_pub.py
+    scripts/motor_controller.py
+    scripts/localization.py
   DESTINATION lib/${PROJECT_NAME}
 )
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
