@@ -1,0 +1,36 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/jetson/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/turtlebot3_example",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_example/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_msgs/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/tb3_sim",
+        "/home/jetson/turtlebot3_ws/install/tb3_sim/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/autonomous_exploration",
+        "/home/jetson/turtlebot3_ws/install/autonomous_exploration/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/install/waypoint_navigation/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/install/messages/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/build/autonomous_rover",
+        "/home/jetson/autonomous_rover/install/autonomous_rover/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/jetson/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/turtlebot3_example",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_example/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/install/turtlebot3_msgs/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/tb3_sim",
+        "/home/jetson/turtlebot3_ws/install/tb3_sim/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib/python3.8/site-packages",
+        "/home/jetson/turtlebot3_ws/build/autonomous_exploration",
+        "/home/jetson/turtlebot3_ws/install/autonomous_exploration/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/install/waypoint_navigation/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/install/messages/lib/python3.8/site-packages",
+        "/home/jetson/autonomous_rover/build/autonomous_rover",
+        "/home/jetson/autonomous_rover/install/autonomous_rover/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ]
+}
