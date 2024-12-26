@@ -18,8 +18,8 @@ endif()
 # Install Python scripts
 install(
   PROGRAMS
-    scripts/motor_controller.py
-    scripts/localization.py
+    scripts/motor_cont.py
+    scripts/loc.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
