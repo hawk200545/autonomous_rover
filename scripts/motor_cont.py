@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 
 import rclpy
 from rclpy.node import Node
@@ -18,7 +18,7 @@ class MotorController(Node):
         self.arduino = None
         while self.arduino is None:
             try:
-                self.arduino = serial.Serial(port='/dev/ttyACM1', baudrate=9600, timeout=1)
+                self.arduino = serial.Serial(port='/dev/ttyACM0', baudrate=9600, timeout=1)
                 time.sleep(2)
                 self.get_logger().info("Connected to Arduino via Serial")
                 self.reset_encoders()  # Reset encoders after connecting to Arduino

@@ -21,7 +21,7 @@ def generate_launch_description():
     # Node for motor controller
     motor_controller_node = Node(
         package='autonomous_rover',
-        executable='motor_controller.py',
+        executable='motor_cont.py',
         name='motor_controller',
         output='screen'
     )
@@ -29,7 +29,7 @@ def generate_launch_description():
     # Node for localization
     localization_node = Node(
         package='autonomous_rover',
-        executable='localization.py',
+        executable='loc.py',
         name='localization',
         output='screen'
     )

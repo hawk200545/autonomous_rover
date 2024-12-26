@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
@@ -82,6 +81,7 @@ class OdometryNode(Node):
         self.get_logger().debug(f"IMU Yaw: {self.theta_imu}")
 
     def publish_odometry(self):
+        
         # Create Odometry message
         odom = Odometry()
         odom.header.stamp = self.get_clock().now().to_msg()
@@ -100,7 +100,7 @@ class OdometryNode(Node):
         # Publish odometry message
         self.odom_publisher.publish(odom)
 
-        # Publish TF
+        # Publish TF for odom to base_link
         transform = TransformStamped()
         transform.header.stamp = self.get_clock().now().to_msg()
         transform.header.frame_id = 'odom'
@@ -110,6 +110,48 @@ class OdometryNode(Node):
         transform.transform.rotation.z = math.sin(self.theta / 2.0)
         transform.transform.rotation.w = math.cos(self.theta / 2.0)
         self.tf_broadcaster.sendTransform(transform)
+
+        # Publish TF for left_wheel joint
+        left_wheel_transform = TransformStamped()
+        left_wheel_transform.header.stamp = self.get_clock().now().to_msg()
+        left_wheel_transform.header.frame_id = 'base_link'
+        left_wheel_transform.child_frame_id = 'left_wheel'
+        left_wheel_transform.transform.translation.x = 0.0  # Adjust based on your robot configuration
+        left_wheel_transform.transform.translation.y = 0.165  # Adjust based on your robot configuration
+        left_wheel_transform.transform.translation.z = 0.0
+        left_wheel_transform.transform.rotation.x = 0.0
+        left_wheel_transform.transform.rotation.y = 0.0
+        left_wheel_transform.transform.rotation.z = 0.0
+        left_wheel_transform.transform.rotation.w = 1.0
+        self.tf_broadcaster.sendTransform(left_wheel_transform)
+
+        # Publish TF for right_wheel joint
+        right_wheel_transform = TransformStamped()
+        right_wheel_transform.header.stamp = self.get_clock().now().to_msg()
+        right_wheel_transform.header.frame_id = 'base_link'
+        right_wheel_transform.child_frame_id = 'right_wheel'
+        right_wheel_transform.transform.translation.x = 0.0  # Adjust based on your robot configuration
+        right_wheel_transform.transform.translation.y = -0.165  # Adjust based on your robot configuration
+        right_wheel_transform.transform.translation.z = 0.0
+        right_wheel_transform.transform.rotation.x = 0.0
+        right_wheel_transform.transform.rotation.y = 0.0
+        right_wheel_transform.transform.rotation.z = 0.0
+        right_wheel_transform.transform.rotation.w = 1.0
+        self.tf_broadcaster.sendTransform(right_wheel_transform)
+
+
+        laser_transform = TransformStamped()
+        laser_transform.header.stamp = self.get_clock().now().to_msg()
+        laser_transform.header.frame_id = "base_link"  # Replace with your parent frame
+        laser_transform.child_frame_id = "laser"
+        laser_transform.transform.translation.x = 0.1  # Adjust based on the laser's position
+        laser_transform.transform.translation.y = 0.0
+        laser_transform.transform.translation.z = 0.2  # Height of the laser
+        laser_transform.transform.rotation.x = 0.0
+        laser_transform.transform.rotation.y = 0.0
+        laser_transform.transform.rotation.z = 0.0
+        laser_transform.transform.rotation.w = 1.0
+
 
     def euler_from_quaternion(self, x, y, z, w):
         # Convert quaternion to Euler angles
