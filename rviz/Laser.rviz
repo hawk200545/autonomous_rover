@@ -7,10 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /LaserScan1/Topic1
-        - /RobotModel1
-        - /RobotModel1/Status1
-        - /Odometry1
-        - /Odometry1/Status1
       Splitter Ratio: 0.5
     Tree Height: 507
   - Class: rviz_common/Selection
@@ -80,137 +76,6 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Class: rviz_default_plugins/TF
-      Enabled: true
-      Frame Timeout: 15
-      Frames:
-        All Enabled: true
-        base_footprint:
-          Value: true
-        base_link:
-          Value: true
-        caster_wheel:
-          Value: true
-        chasis:
-          Value: true
-        imu:
-          Value: true
-        laser_frame:
-          Value: true
-        left_wheel:
-          Value: true
-        odom:
-          Value: true
-        right_wheel:
-          Value: true
-      Marker Scale: 1
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: false
-      Tree:
-        {}
-      Update Interval: 0
-      Value: true
-    - Alpha: 1
-      Class: rviz_default_plugins/RobotModel
-      Collision Enabled: false
-      Description File: ""
-      Description Source: Topic
-      Description Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /robot_description
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        caster_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chasis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        imu:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        laser_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: RobotModel
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Angle Tolerance: 0.10000000149011612
-      Class: rviz_default_plugins/Odometry
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.30000001192092896
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: true
-      Enabled: true
-      Keep: 100
-      Name: Odometry
-      Position Tolerance: 0.10000000149011612
-      Shape:
-        Alpha: 1
-        Axes Length: 1
-        Axes Radius: 0.10000000149011612
-        Color: 255; 25; 0
-        Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
-        Shaft Length: 1
-        Shaft Radius: 0.05000000074505806
-        Value: Arrow
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /odom
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -254,7 +119,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 21.803081512451172
+      Distance: 44.507930755615234
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -269,10 +134,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.1903979778289795
+      Pitch: 1.225398063659668
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.9953980445861816
+      Yaw: 2.5203981399536133
     Saved: ~
 Window Geometry:
   Displays:

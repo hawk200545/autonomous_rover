@@ -66,9 +66,9 @@ class OdometryNode(Node):
         self.theta_encoder += d_theta_encoder
         self.theta_encoder = math.atan2(math.sin(self.theta_encoder), math.cos(self.theta_encoder))  # Normalize
 
-        # Fuse encoder and IMU data for orientation
+        '''# Fuse encoder and IMU data for orientation
         self.theta = self.alpha * self.theta_encoder + (1 - self.alpha) * self.theta_imu
-        self.theta = math.atan2(math.sin(self.theta), math.cos(self.theta))  # Normalize
+        self.theta = math.atan2(math.sin(self.theta), math.cos(self.theta))  # Normalize'''
 
         # Publish odometry
         self.publish_odometry()
@@ -142,7 +142,7 @@ class OdometryNode(Node):
 
         laser_transform = TransformStamped()
         laser_transform.header.stamp = self.get_clock().now().to_msg()
-        laser_transform.header.frame_id = "base_link"  # Replace with your parent frame
+        laser_transform.header.frame_id = "base_footprint"  # Replace with your parent frame
         laser_transform.child_frame_id = "laser"
         laser_transform.transform.translation.x = 0.1  # Adjust based on the laser's position
         laser_transform.transform.translation.y = 0.0

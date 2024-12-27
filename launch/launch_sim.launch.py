@@ -6,6 +6,8 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import RegisterEventHandler
+from launch.event_handlers import OnProcessExit
 
 from launch_ros.actions import Node
 
@@ -37,6 +39,31 @@ def generate_launch_description():
                                    '-entity', 'my_bot'],
                         output='screen')
 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["joint_broad"],
+    )
+
+    delayed_diff_drive_spawner = RegisterEventHandler(
+         event_handler=OnProcessExit(
+             target_action=spawn_entity,
+             on_exit=[diff_drive_spawner],
+         )
+        )
+    delayed_joint_broad_spawner = RegisterEventHandler(
+         event_handler=OnProcessExit(
+             target_action=diff_drive_spawner,
+             on_exit=[joint_broad_spawner],
+         )
+        )
+
 
 
     # Launch them all!
@@ -44,4 +71,6 @@ def generate_launch_description():
         rsp,
         gazebo,
         spawn_entity,
+        delayed_diff_drive_spawner,
+        delayed_joint_broad_spawner
     ])
