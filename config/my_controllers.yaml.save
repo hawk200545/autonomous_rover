@@ -18,14 +18,14 @@ diff_cont:
 
     left_wheel_names: ['left_wheel_joint']
     right_wheel_names: ['right_wheel_joint']
-    wheel_separation: 0.26
-    wheel_radius: 0.04
-    cmd_vel_timeout: 0.5
-    use_stamped_vel: false
+    wheel_separation: 0.297
+    wheel_radius: 0.033
 
+    use_stamped_vel: false
+    
     # open_loop: false    
 
-    wheels_per_side: 2
+    # wheels_per_side: x
     # wheel_separation_multiplier: x
     # left_wheel_radius_multiplier: x
     # right_wheel_radius_multiplier: x
